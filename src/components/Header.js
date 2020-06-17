@@ -2,6 +2,7 @@ import React from 'react'
 import LogoUrl from '../logo.svg'
 import {NavLink} from 'react-router-dom'
 import styled from 'styled-components'
+import Login from '../pages/Login'
 
 const Header = styled.header`
   display: flex;
@@ -31,6 +32,14 @@ function Component() {
         <StyleLink to="/history" activeClassName="active">上传历史</StyleLink>
         <StyleLink to="/about" activeClassName="active">关于</StyleLink>
       </nav>
+      <div>
+        <button>
+          <StyleLink to="/login">登录</StyleLink>
+        </button>
+        <button>
+          <StyleLink to="/register">注册</StyleLink>
+        </button>
+      </div>
     </Header>
   )
 }
