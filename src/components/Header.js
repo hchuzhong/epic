@@ -10,7 +10,7 @@ const Header = styled.header`
   display: flex;
   align-items: center;
   padding: 10px 100px;
-  background-color: #02101f;
+  background-color: #343a40;
   color: #fff;
 `
 const Logo = styled.img`
