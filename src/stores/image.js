@@ -25,13 +25,17 @@ class ImageStore {
           this.serverFile = serverFile
           resolve(serverFile)
         }).catch(error => {
-          message.error('上传失败')
-          reject(error)
-        }).finally(() => {
-          this.isUploading = false
-        })
+        message.error('上传失败')
+        reject(error)
+      }).finally(() => {
+        this.isUploading = false
+      })
     })
+  }
 
+  @action reset() {
+    this.isUploading = false
+    this.serverFile = null
   }
 }
 

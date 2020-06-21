@@ -6,7 +6,6 @@ import Tips from '../components/Tips'
 
 const Home = observer(() => {
   const {UserStore} = useStores()
-  const User = () => <div>Hello {UserStore.currentUser.attributes.username}</div>
   return (
     <>
       {

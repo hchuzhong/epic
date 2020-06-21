@@ -2,6 +2,7 @@ import React,{useEffect} from 'react'
 import {useStores} from '../stores'
 import InfiniteScroll from 'react-infinite-scroller'
 import {List, Spin} from 'antd'
+import { observer } from 'mobx-react';
 import styled from 'styled-components'
 
 const Img = styled.img`
@@ -11,7 +12,7 @@ const Img = styled.img`
   border: 1px solid #eee;
 `
 
-const Component = () => {
+const Component = observer(() => {
   const {HistoryStore} = useStores()
   const loadMore = () => {
     HistoryStore.find()
@@ -21,9 +22,10 @@ const Component = () => {
     console.log('进入组件')
 
     return () => {
-      console.log('卸载') 
+      console.log('卸载')
+      HistoryStore.reset()
     }
-  })
+  },[])
 
   return (
     <div>
@@ -41,7 +43,7 @@ const Component = () => {
                 <Img src={item.attributes.url.attributes.url} alt=""/>
               </div>
               <div>
-                <h5>{item.attributes.filename}</h5>
+                <h4>{item.attributes.filename}</h4>
               </div>
               <div>
                 <a href={item.attributes.url.attributes.url} target="blank">{item.attributes.url.attributes.url}</a>
@@ -57,6 +59,6 @@ const Component = () => {
       </InfiniteScroll>
     </div>
   )
-}
+})
 
 export default Component
