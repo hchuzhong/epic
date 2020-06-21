@@ -1,0 +1,2 @@
+(this.webpackJsonpepic=this.webpackJsonpepic||[]).push([[8],{333:function(e,t,n){"use strict";n.r(t);var a=n(0),c=n.n(a);t.default=function(){return c.a.createElement(c.a.Fragment,null,c.a.createElement("h1",null,"About"),c.a.createElement("h4",null,"\u6709\u4efb\u4f55\u4f7f\u7528\u4e0a\u7684\u95ee\u9898\u8bf7\u8054\u7cfb",c.a.createElement("a",{href:"mailto:hchuzhong@163.com"}," hchuzhong@163.com")))}}}]);
+//# sourceMappingURL=8.ece0b0d7.chunk.js.map
