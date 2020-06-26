@@ -4,7 +4,11 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Loading from './components/Loading'
 
-import {Switch, Route} from 'react-router-dom';
+import {
+  HashRouter as Router,
+  Switch, 
+  Route
+} from 'react-router-dom';
 
 const Home = lazy(() => import('./pages/Home'))
 const History = lazy(() => import('./pages/History'))
@@ -15,7 +19,7 @@ const Register = lazy(() => import('./pages/Register'))
 
 function App() {
   return (
-    <>
+    <Router>
       <Header/>
       <main>
         <Suspense fallback={<Loading/>}>
@@ -29,7 +33,7 @@ function App() {
         </Suspense>
       </main>
       <Footer/>
-    </>
+    </Router>
   );
 }
 
