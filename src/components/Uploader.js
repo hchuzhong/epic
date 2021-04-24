@@ -74,10 +74,7 @@ const Component = observer(() => {
 
       ImageStore.upload()
         .then((serverFile) => {
-          console.log('上传成功')
-          console.log(serverFile)
         }).catch(() => {
-        console.log('上传失败')
       })
       return false
     }

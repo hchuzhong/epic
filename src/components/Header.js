@@ -40,11 +40,9 @@ const Component = observer(() => {
     AuthStore.logout()
   }
   const handleLogin = () => {
-    console.log('跳转到登录页面')
     history.push('./login')
   }
   const handleRegister = () => {
-    console.log('跳转到注册页面')
     history.push('./register')
   }
 

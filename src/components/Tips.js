@@ -1,6 +1,6 @@
 import React from 'react'
-import {useStores} from '../stores'
-import {observer} from 'mobx-react'
+import { useStores } from '../stores'
+import { observer } from 'mobx-react'
 import styled from 'styled-components'
 
 const Tips = styled.div`
@@ -10,9 +10,8 @@ const Tips = styled.div`
   color: #fff;
 `
 
-const Component = observer(({children}) => {
-  const {UserStore} = useStores()
-  console.log(UserStore)
+const Component = observer(({ children }) => {
+  const { UserStore } = useStores()
   return (
     <>
       {

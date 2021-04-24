@@ -1,8 +1,8 @@
 import React from 'react'
-import {Form, Input, Button} from 'antd'
+import { Form, Input, Button } from 'antd'
 import styled from 'styled-components'
-import {useStores} from '../stores'
-import {useHistory} from 'react-router-dom'
+import { useStores } from '../stores'
+import { useHistory } from 'react-router-dom'
 
 const Wrapper = styled.div`
   max-width: 600px;
@@ -32,25 +32,20 @@ const tailLayout = {
 }
 
 const Component = () => {
-  const {AuthStore} = useStores()
+  const { AuthStore } = useStores()
   const history = useHistory()
 
   const onFinish = values => {
-    console.log('Success:', values)
     AuthStore.setUsername(values.username)
     AuthStore.setPassword(values.password)
     AuthStore.login()
       .then(() => {
-        console.log('登录成功，跳转首页')
         history.push('/')
       }).catch((e) => {
-      console.log(e)
-      console.log('登录失败')
-    })
+      })
   }
 
   const onFinishFailed = errorInfo => {
-    console.log('Failed:', errorInfo)
   }
 
   const validateUsername = (rule, value) => {
@@ -81,7 +76,7 @@ const Component = () => {
             }
           ]}
         >
-          <Input/>
+          <Input />
         </Form.Item>
 
         <Form.Item
@@ -102,7 +97,7 @@ const Component = () => {
             }
           ]}
         >
-          <Input.Password/>
+          <Input.Password />
         </Form.Item>
 
         <Form.Item {...tailLayout}>

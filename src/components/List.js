@@ -1,7 +1,7 @@
-import React,{useEffect} from 'react'
-import {useStores} from '../stores'
+import React, { useEffect } from 'react'
+import { useStores } from '../stores'
 import InfiniteScroll from 'react-infinite-scroller'
-import {List, Spin} from 'antd'
+import { List, Spin } from 'antd'
 import { observer } from 'mobx-react';
 import styled from 'styled-components'
 
@@ -13,19 +13,16 @@ const Img = styled.img`
 `
 
 const Component = observer(() => {
-  const {HistoryStore} = useStores()
+  const { HistoryStore } = useStores()
   const loadMore = () => {
     HistoryStore.find()
   }
 
   useEffect(() => {
-    console.log('进入组件')
-
     return () => {
-      console.log('卸载')
       HistoryStore.reset()
     }
-  },[])
+  }, [])
 
   return (
     <div>
@@ -40,7 +37,7 @@ const Component = observer(() => {
           item =>
             <List.Item key={item.id}>
               <div>
-                <Img src={item.attributes.url.attributes.url} alt=""/>
+                <Img src={item.attributes.url.attributes.url} alt="" />
               </div>
               <div>
                 <h4>{item.attributes.filename}</h4>
@@ -52,7 +49,7 @@ const Component = observer(() => {
         }>
           {HistoryStore.isLoading && HistoryStore.hasMore && (
             <div>
-              <Spin tip="加载中"/>
+              <Spin tip="加载中" />
             </div>
           )}
         </List>

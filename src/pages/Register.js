@@ -36,20 +36,16 @@ const Component = () => {
   const history = useHistory()
 
   const onFinish = values => {
-    console.log('Success:', values)
     AuthStore.setUsername(values.username)
     AuthStore.setPassword(values.password)
     AuthStore.register()
       .then(() => {
-        console.log('注册成功, 跳转到首页')
         history.push('/')
       }).catch(() => {
-      console.log('登录失败，什么都不做')
     })
   }
 
   const onFinishFailed = errorInfo => {
-    console.log('Failed:', errorInfo)
   }
 
   const validateUsername = (rule, value) => {

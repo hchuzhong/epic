@@ -2,14 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
-import {BrowserRouter as Router} from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom'
 import 'antd/dist/antd.css'
 import Model from './models'
 
 ReactDOM.render(
   <>
     <Router>
-      <App/>
+      <App />
     </Router>
   </>,
   document.getElementById('root')
